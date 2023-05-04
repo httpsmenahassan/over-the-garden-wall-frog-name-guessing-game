@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <title>Over the Garden Wall Frog Guessing Game</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><i class="fa-solid fa-frog"></i>Over the Garden Wall Frog Guessing Game</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+            <div class="well">
+                <h3><span class="fa fa-user"></span> Local</h3>
+            </div>
+        </div>
+        <div class="col-sm-6">
+          <h3>Names</h3>
+          <ul class="names">
+          <% for(var i=0; i<names.length; i++) {
+            let frogImage = 'frog1-notGuessedCorrectlyYet.jpeg'
+            if (guessedCorrectly[i]) {
+              frogImage = 'frog2-guessedCorrectly.jpg'
+            } else if (names[i].userId.toString() === user._id.toString()) {
+              frogImage = 'frog3-yourOwnNameSubmission.jpg'
+            }
+            %>
+            <li class="names">
+              <img src="img/<%= frogImage %>">
+              <!-- the userId of the frog name (the person who created the name) is the same as the user ID of the person logged in, if yes we get the full name of the frog; otherwise, they get the obscured frog name -->
+              <!-- OR if you've guess the frog name correctly -->
+              <!-- name is obscured and every even character is replaced with a # -->
+              <!-- names[i].name is the name the user has entered in for the frog -->
+              <span><%= names[i].userId.toString() === user._id.toString() || guessedCorrectly[i] ? names[i].name : names[i].name.split('').map((character, i) => i % 3 === 0 ? '#' : character).join('') %></span>
+
+              <% if (names[i].userId.toString() === user._id.toString()) { %>
+                <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+                <%# we're checking to see if the name (names[i]) that we're putting into the page already exists in my (user who is logged in) correctGuesses array %>
+              <% } else if (!guessedCorrectly[i]) { %> 
+              <input id="<%= names[i]._id %>" type="text" placeholder="Guess the name">
+              <button data-nameId="<%= names[i]._id %>" class="guessFrogNameBtn">Guess</button>
+              <% } %>
+            </li>
+          <% } %>
+          </ul>
+
+          <h2>Add a name</h2>
+        <% if (user.local.email) { %>
+          <form action="/names" method="POST">
+            <!-- sending this to the database -->
+            <input type="text" placeholder="Name the Frog" name="name">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
+
+</div>
+
+<script src="https://kit.fontawesome.com/e9f7511864.js" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+
+</body>
+</html>

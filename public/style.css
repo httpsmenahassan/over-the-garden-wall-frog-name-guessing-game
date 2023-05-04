@@ -1,0 +1,78 @@
+/* body{
+  padding-top:80px;
+  word-wrap:break-word;
+}
+img{
+  height: 200px;
+} */
+
+/* Add some spacing between the elements */
+.container {
+  margin-top: 20px;
+}
+
+/* Center the page header and make the anchor icon larger */
+.page-header {
+  text-align: center;
+}
+.fa-anchor {
+  font-size: 36px;
+}
+
+/* Style the logout button */
+.btn-default {
+  background-color: #333;
+  color: #fff;
+}
+.btn-default:hover {
+  background-color: #666;
+}
+
+/* Add some margin and padding to the name list */
+.names {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+/* Style the frog images */
+.names img {
+  width: 80px;
+  height: 80px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+/* Style the frog names */
+.names span {
+  font-size: 18px;
+}
+
+/* Style the guess input and button */
+.guessFrogNameBtn {
+  margin-left: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+.guessFrogNameBtn:hover {
+  background-color: #666;
+}
+input[type="text"] {
+  padding: 5px;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Style the trash icon */
+.fa-trash {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+.fa-trash:hover {
+  color: darkred;
+}
