@@ -1,8 +1,10 @@
+// worked with mentor Mark on this
+
 module.exports = function(app, passport, db, ObjectID) {
 
 // normal routes ===============================================================
 
-    // show the home page (will also have our login links)
+    // show the home page
     app.get('/', function(req, res) {
         res.render('index.ejs');
     });
@@ -40,7 +42,7 @@ module.exports = function(app, passport, db, ObjectID) {
         res.redirect('/');
     });
 
-// message board routes ===============================================================
+// name board routes ===============================================================
 
     app.post('/names', (req, res) => {
       db.collection('frogNames').insertOne({userId: req.user._id, name: req.body.name}, (err, result) => {
@@ -69,7 +71,9 @@ module.exports = function(app, passport, db, ObjectID) {
     })
 
     app.delete('/names', (req, res) => {
-      db.collection('frogNames').findOneAndDelete({userId: req.user._id, nameId: req.body.name}, (err, result) => {
+      console.log(req.query.name)
+      // deletes don't have bodies so you can't pass body into deletes
+      db.collection('frogNames').findOneAndDelete({_id: new ObjectID(req.query.name)}, (err, result) => {
         if (err) return res.send(500, err)
         res.send('Message deleted!')
       })
