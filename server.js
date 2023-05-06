@@ -17,6 +17,7 @@ const session      = require('express-session');
 
 const configDB = require('./config/database.js');
 const ObjectID = require('mongodb').ObjectID
+const cors = require('cors')
 
 let db
 
@@ -38,6 +39,9 @@ app.use(express.static('public'))
 
 
 app.set('view engine', 'ejs'); // set up ejs for templating
+
+app.use(cors())
+
 
 // required for passport
 app.use(session({
