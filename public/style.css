@@ -1,78 +1,165 @@
-/* body{
-  padding-top:80px;
-  word-wrap:break-word;
+/* used chat GPT for some styling here */
+
+@font-face {
+  font-family: tombOfTheUnknownFont;
+  src: url("tombOfTheUnknownFont.ttf");
 }
-img{
-  height: 200px;
+
+body {
+  font-size: 62.5%;
+  font-family: tombOfTheUnknownFont;
+}
+
+/* Set background color for the entire page */
+body {
+  background-color: #f2f2f2;
+}
+
+/* Style the container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Style the header */
+.page-header {
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.page-header a {
+  margin-top: 5px;
+}
+
+/* Style the frog names list */
+.names {
+  list-style: none;
+  padding-left: 0;
+}
+
+.names li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.names li img {
+  height: 80px;
+  width: 80px;
+  margin-right: 15px;
+  border-radius: 10px;
+  background-size: cover;
+}
+
+.names li span {
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+/* Style the "Add a name" section */
+/* form {
+  display: flex;
+  margin-bottom: 20px;
 } */
 
-/* Add some spacing between the elements */
-.container {
-  margin-top: 20px;
+form input[type="text"] {
+  /* flex: 1; */
+  padding: 10px;
+  font-size: 1.125rem;
 }
 
-/* Center the page header and make the anchor icon larger */
-.page-header {
-  text-align: center;
-}
-.fa-anchor {
-  font-size: 36px;
+form button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #0069d9;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
 }
 
-/* Style the logout button */
+/* Style the "Guess" button */
+.guessFrogNameBtn {
+  margin-left: 10px;
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+}
+
+.fa-trash {
+  margin-left: 10px;
+  color: #666;
+  cursor: pointer;
+}
+.fa-trash:hover {
+  color: #0069d9;
+}
+
 .btn-default {
   background-color: #333;
   color: #fff;
+  font-size: 1.25rem;
 }
 .btn-default:hover {
   background-color: #666;
 }
 
-/* Add some margin and padding to the name list */
-.names {
+h3 {
   margin-top: 20px;
-  padding: 0;
-  list-style: none;
+  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
 }
 
-/* Style the frog images */
-.names img {
-  width: 80px;
-  height: 80px;
-  margin-right: 10px;
-  border-radius: 50%;
+ul {
+  padding-left: 0;
+  list-style-type: none;
 }
 
-/* Style the frog names */
-.names span {
-  font-size: 18px;
+.list-group {
+  margin-bottom: 20px;
 }
 
-/* Style the guess input and button */
-.guessFrogNameBtn {
-  margin-left: 10px;
-  background-color: #333;
-  color: #fff;
+.list-group-item {
+  padding: 10px 15px;
   border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-.guessFrogNameBtn:hover {
-  background-color: #666;
-}
-input[type="text"] {
-  padding: 5px;
-  width: 200px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  border-radius: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  color: #555;
+  background-color: #f8f9fa;
 }
 
-/* Style the trash icon */
-.fa-trash {
-  margin-left: 10px;
-  color: red;
-  cursor: pointer;
+.list-group-item:first-child {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 }
-.fa-trash:hover {
-  color: darkred;
+
+.list-group-item:last-child {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.list-group-item.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.list-group-item.active:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.list-group-item:hover {
+  background-color: #e9ecef;
+  color: #333;
 }
