@@ -1,4 +1,7 @@
 /* used chat GPT for some styling here */
+* {
+  font-family: tombOfTheUnknownFont;
+}
 
 @font-face {
   font-family: tombOfTheUnknownFont;
@@ -162,4 +165,22 @@ ul {
 .list-group-item:hover {
   background-color: #e9ecef;
   color: #333;
+}
+
+.jumbotron h1, #login, #signUp  {
+  font-family: tombOfTheUnknownFont;
+}
+
+label {
+  font-size: 1.75rem;
+}
+
+.accountP {
+  font-size: 1.25rem;
+}
+
+.index {
+  border-radius: 140px;
+  margin-top: 18px;
+  margin-bottom: 23px;
 }
