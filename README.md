@@ -1,3 +1,7 @@
+Link to live project: https://menahassan-over-the-garden-wall-frog.onrender.com/
+
+<img src="OTGW-project-screenshot.png">
+
 ## Installation
 
 1. Clone repo
